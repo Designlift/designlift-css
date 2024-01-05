@@ -1,7 +1,7 @@
 # Designlift
-Design for web with just a *few* classes.
+Design for web with just a *few* classes. This simple design system in CSS is focused on consistency, speed, and ease of use.
 
-We wanted to build a super-simple design system that was easy to pick up and hard to get wrong. You don't have to know css to use it, and it works great to get an idea off the ground quickly. It's also easy to build upon with other frameworks and libraries.
+We wanted to build a super-simple design system that was easy to pick up and hard to get wrong. You don't have to know CSS to use it, and it works great to get an web idea off the ground quickly. It's also easy to build upon with other frameworks and libraries.
 
 ## Concepts
 Here are some concepts we followed to make it easier to get right:
