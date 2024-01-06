@@ -2,5 +2,21 @@
   "name": "designlift-css",
   "description": "Design for web with just a few classes.",
   "version": "0.1.0",
-  "author": "David Schofield <hello@d471d.com>"
+  "author": "David Schofield <hello@d471d.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Designlift/designlift-css"
+  },
+  "bugs": {
+    "url": "https://github.com/Designlift/designlift-css/issues"
+  },
+  "homepage": "https://github.com/Designlift/designlift-css#readme",
+  "license": "MIT",
+  "main": "index.css",
+  "browser": "index.css",
+  "keywords": [
+    "design",
+    "css",
+    "framework"
+  ]
 }

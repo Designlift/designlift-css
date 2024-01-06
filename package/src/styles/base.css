@@ -2,30 +2,30 @@
   font-size: 16px;
 
   /* Font Size */
-  --xxs: round(var(--xs) / var(--scale), var(--root));
-  --xs: round(var(--sm) / var(--scale), var(--root));
-  --sm: round(var(--md) / var(--scale), var(--root));
+  --xxs: calc(var(--xs) / var(--scale));
+  --xs: calc(var(--sm) / var(--scale));
+  --sm: calc(var(--md) / var(--scale));
   --md: var(--base-font-size);
-  --lg: round(var(--md) * var(--scale), var(--root));
-  --xl: round(var(--lg) * var(--scale), var(--root));
-  --xxl: round(var(--xl) * var(--scale), var(--root));
-  --xxxl: round(var(--xxl) * var(--scale), var(--root));
+  --lg: calc(var(--md) * var(--scale));
+  --xl: calc(var(--lg) * var(--scale));
+  --xxl: calc(var(--xl) * var(--scale));
+  --xxxl: calc(var(--xxl) * var(--scale));
   --full: 100vmin;
 
   /*Sizes */
   --w-sm: var(--base-font-size);
-  --w-md: round(var(--base-font-size) * var(--scale) * var(--scale), var(--root));
-  --w-lg: round(var(--h-md) * var(--scale) * var(--scale), var(--root));
-  --w-xl: round(var(--h-lg) * var(--scale) * var(--scale), var(--root));
-  --w-xxl: round(var(--h-xl) * var(--scale) * var(--scale), var(--root));
-  --w-xxxl: round(var(--h-xxl) * var(--scale) * var(--scale), var(--root));
+  --w-md: calc(var(--base-font-size) * var(--scale) * var(--scale));
+  --w-lg: calc(var(--h-md) * var(--scale) * var(--scale));
+  --w-xl: calc(var(--h-lg) * var(--scale) * var(--scale));
+  --w-xxl: calc(var(--h-xl) * var(--scale) * var(--scale));
+  --w-xxxl: calc(var(--h-xxl) * var(--scale) * var(--scale));
   --w-full: 100vw;
   --h-sm: var(--base-font-size);
-  --h-md: round(var(--base-font-size) * var(--scale) * var(--scale), var(--root));
-  --h-lg: round(var(--h-md) * var(--scale) * var(--scale), var(--root));
-  --h-xl: round(var(--h-lg) * var(--scale) * var(--scale), var(--root));
-  --h-xxl: round(var(--h-xl) * var(--scale) * var(--scale), var(--root));
-  --h-xxxl: round(var(--h-xxl) * var(--scale) * var(--scale), var(--root));
+  --h-md: calc(var(--base-font-size) * var(--scale) * var(--scale));
+  --h-lg: calc(var(--h-md) * var(--scale) * var(--scale));
+  --h-xl: calc(var(--h-lg) * var(--scale) * var(--scale));
+  --h-xxl: calc(var(--h-xl) * var(--scale) * var(--scale));
+  --h-xxxl: calc(var(--h-xxl) * var(--scale) * var(--scale));
   --h-full: 100vh;
   font-size: clamp(var(--min-font-size), 0.5rem + 1vmin, var(--max-font-size)); /* Apply similar logic to each size maybe */
 }
