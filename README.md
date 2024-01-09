@@ -15,6 +15,14 @@ Here are some concepts we followed to make it easier to get right:
 - Make it easy to build upon using other frameworks and libraries.
 
 ## Getting Started
+
+### Installation
+
+```
+npm add designlift-css
+import "designlift-css/package/src/styles/index.css";
+```
+
 ### Theme
 Set the theme of design in the `theme.css`. Set defaults and go from there, or override the calculated values.
 
