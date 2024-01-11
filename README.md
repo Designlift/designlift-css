@@ -24,7 +24,85 @@ import "designlift-css/package/src/styles/index.css";
 ```
 
 ### Theme
-Set the theme of design in the `theme.css`. Set defaults and go from there, or override the calculated values.
+Set the theme of design using the following template and then import after `index.css`.
+
+```
+:root {
+
+  /* Foundation */
+  --max-font-size: 2rem;
+  --min-font-size: 1rem;
+  --base-font-size: 1rem;
+  --root: 4px;
+  --scale: 1.44;
+  --rounding: var(--root);
+  --alignment: baseline;
+  
+  /* Layout */
+  --border-width: 1px;
+  --border-style: solid;
+  --element-padding: var(--sm);
+  --element-radius: var(--md);
+  --element-gap: var(--md);
+  --element-shadow: 0 0 var(--md) var(--xs) var(--shadow-color);
+  --margin: var(--sm);
+  --frame-padding: var(--xl);
+  --frame-radius: var(--xl);
+  --frame-gap: var(--xl);
+  --frame-shadow: 0 0 var(--xl) var(--xs) var(--shadow-color);
+  --frame-margin: var(--xl);
+
+  /* Colors */
+  --base-text-color: #555;
+  --base-heading-color: #333;
+  --base-surface-color: #ddd;
+  --base-border-color: #ccc;
+  --base-hover-color: #eee;
+  --highlight-heading-color: #fff;
+  --highlight-text-color: #ddd;
+  --highlight-surface-color: #222;
+  --highlight-border-color: #444;
+  --accent-heading-color: #333;
+  --accent-text-color: #555;
+  --accent-surface-color: #fff;
+  --accent-border-color: #fff;
+  --action-heading-color: #fff;
+  --action-text-color: #fff;
+  --action-surface-color: #ff0000;
+  --action-border-color: #ff0000;
+  --action-hover-color: #ff4444;
+  --transparent-color: rgba(0,0,0,0);
+  --shadow-color: rgba(0,0,0,0.1);
+
+  /* Interactions */
+  --action-base-transition: 0.1s;
+  --action-base-position: translate(0, -0.25rem);
+  --action-hover-position: translate(0, -0.25rem);
+  --action-base-shadow: 0 0.25em 0 0 #cc0000;
+  --action-hover-shadow: 0 0.25em 0 0 #dd0000;
+  --action-active-shadow: 0 0.05em 0 0 #cc0000;
+  --action-active-position: translate(0, 0);
+  --element-hover-shadow: 0 0 var(--md) var(--md) var(--shadow-color);
+  --element-transition: box-shadow 0.3s ease-in-out;
+  --frame-hover-shadow: 0 0 var(--xl) var(--xl) var(--shadow-color);
+  --frame-transition: box-shadow 0.3s ease-in-out;
+
+  /* Typography */
+  --base-font-family: 'Inter Variable', sans-serif;
+  --heading-font-family: 'Inter Variable', sans-serif;
+  --accent-font-family: 'Inter Variable', sans-serif;
+  --base-font-style: italic;
+  --heading-font-style: bold italic;
+  --measure: 66ch;
+  --line-height: var(--scale);
+
+  /* Other */
+  --details-icon-closed: '';
+  --details-icon-open: '';
+  --grid-min-size: var(--w-xxl); /* Adjust to fit scale */
+  --grid-max-size: 1fr;
+}
+```
 
 Each page can be layed out by following the process below:
 
