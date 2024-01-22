@@ -1,2 +1,823 @@
-@import url('base.css');
-@import url('theme.css');
+:root {
+  font-size: 16px;
+
+  /* Font Size */
+  --xxs: calc(var(--xs) / var(--scale));
+  --xs: calc(var(--sm) / var(--scale));
+  --sm: calc(var(--md) / var(--scale));
+  --md: var(--base-font-size);
+  --lg: calc(var(--md) * var(--scale));
+  --xl: calc(var(--lg) * var(--scale));
+  --xxl: calc(var(--xl) * var(--scale));
+  --xxxl: calc(var(--xxl) * var(--scale));
+  --full: 100vmin;
+
+  /*Sizes */
+  --w-sm: var(--base-font-size);
+  --w-md: calc(var(--base-font-size) * var(--scale) * var(--scale));
+  --w-lg: calc(var(--h-md) * var(--scale) * var(--scale));
+  --w-xl: calc(var(--h-lg) * var(--scale) * var(--scale));
+  --w-xxl: calc(var(--h-xl) * var(--scale) * var(--scale));
+  --w-xxxl: calc(var(--h-xxl) * var(--scale) * var(--scale));
+  --w-full: 100vw;
+  --h-sm: var(--base-font-size);
+  --h-md: calc(var(--base-font-size) * var(--scale) * var(--scale));
+  --h-lg: calc(var(--h-md) * var(--scale) * var(--scale));
+  --h-xl: calc(var(--h-lg) * var(--scale) * var(--scale));
+  --h-xxl: calc(var(--h-xl) * var(--scale) * var(--scale));
+  --h-xxxl: calc(var(--h-xxl) * var(--scale) * var(--scale));
+  --h-full: 100vh;
+  font-size: clamp(var(--min-font-size), 0.5rem + 1vmin, var(--max-font-size)); /* Apply similar logic to each size maybe */
+}
+
+* {
+  text-wrap: balance;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--base-surface-color);
+  color: var(--base-text-color);
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+  font-style: var(--base-font-style);
+  font-weight: var(--base-font-weight);
+  scroll-behavior: smooth;
+}
+
+p, table, ul, ol, dl, blockquote, pre, hr {
+  font-family: var(--base-font-family);
+}
+
+p {
+  margin: var(--xxs) 0;
+  line-height: var(--scale);
+}
+
+p:nth-child(1) {
+  margin-top: 0;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--base-heading-color);
+  font-family: var(--heading-font-family);
+  font-style: var(--heading-font-style);
+  font-weight: var(--heading-font-weight);
+}
+
+h1, h2, h3, h4, h5, h6, p, td, ul, ol, dl, blockquote, pre, hr {
+  margin: var(--xxs) 0;
+  max-width: var(--measure);
+  font-size: inherit;
+  scroll-margin-top: var(--frame-padding);
+}
+
+figure {
+  margin: 0;
+}
+
+form {
+  max-width: var(--measure);
+}
+
+fieldset {
+  border: unset;
+  border-radius: unset;
+  padding: unset;
+}
+
+input, textarea, select, button {
+  border: var(--border);
+  border-radius: var(--element-radius);
+  padding: var(--element-padding);
+  font-size: var(--base-font-size);
+}
+
+/* Layout */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p > a,
+li > a, 
+td > a, 
+th > a,
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+a.default {
+  color: inherit;
+  border: initial;
+  border-radius: initial;
+  background: initial;
+  padding: initial;
+  text-decoration: underline;
+  line-height: normal;
+}
+
+p > a:hover, 
+li > a:hover, 
+td > a:hover, 
+th > a:hover,
+h1 > a:hover,
+h2 > a:hover,
+h3 > a:hover,
+h4 > a:hover,
+h5 > a:hover,
+h6 > a:hover,
+a.default:hover {
+  border: initial;
+  border-radius: initial;
+  background: initial;
+  padding: initial;
+  text-decoration: underline;
+}
+
+a.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: inline-flex;
+}
+
+a, button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sm);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+label + input, label + textarea, label + select, form > div, form fieldset {
+  margin-top: var(--sm);
+  margin-bottom: var(--element-gap)
+}
+
+input[type="color"] {
+  width: var(--xxl);
+  height: var(--xxl);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: var(--md);
+  height: var(--md);
+}
+
+/*for checkbox and radio buttons*/
+form div label, form div input {
+  align-self: center;
+}
+
+label {
+  display: flex;
+  gap: var(--xxs);
+}
+
+form label {
+  font-size: var(--base-font-size);
+}
+
+/* article > h1 {
+  font-size: var(--xxl);
+}
+
+article > h2 {
+  font-size: var(--xl);
+}
+
+article > h3 {
+  font-size: var(--lg);
+}
+
+article > h4 {
+  font-size: var(--md);
+}
+
+article > h5 {
+  font-size: var(--sm);
+}
+
+article > h6 {
+  font-size: var(--xs);
+} */
+
+/* details > summary {
+  list-style-type: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::before {
+  content: var(--details-icon-closed);
+}
+
+details[open] > summary::before {
+  content: var(--details-icon-open);
+} */
+
+.vertical > li, .horizontal > li {
+  list-style-type: none;
+
+}
+
+ul.horizontal, ul.vertical{
+  padding: 0;
+  /* margin: unset;
+  padding: 0;
+  align-items: baseline; */
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details p {
+  border-radius: var(--element-radius);
+  background: #eee;
+  padding: var(--element-padding);
+}
+
+.screen-reader {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.stack {
+  position: relative;
+}
+
+.stack > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.collapser {
+  display: none;
+}
+
+.hoverable:hover {
+  cursor: pointer;
+}
+
+.hoverable > * {
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.hoverable.top > * {
+  transform: translateY(100%);
+}
+
+.hoverable.bottom > * {
+  transform: translateY(-100%);
+}
+
+.hoverable:hover > * {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.fill {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.divider {
+  padding: var(--frame-gap) 0;
+}
+
+.frame.divider {
+  padding: 0;
+}
+
+.vertical > .divider {
+  border-bottom: var(--border-width) var(--border-style) var(--base-border-color);
+}
+
+.horizontal > .divider {
+  border-right: var(--border-width) var(--border-style) var(--base-border-color);
+}
+
+.shadow {
+  transition: var(--element-transition);
+  box-shadow: var(--element-shadow);
+  z-index: 1;
+}
+
+.shadow:hover {
+  box-shadow: var(--element-hover-shadow);
+  z-index: 2;
+}
+
+.frame.shadow {
+  transition: var(--frame-transition);
+  box-shadow: var(--frame-shadow);
+  z-index: 1;
+}
+
+.frame.shadow:hover {
+  box-shadow: var(--frame-hover-shadow);
+  z-index: 2;
+}
+
+.frame.gap {
+  gap: var(--frame-gap);
+}
+
+.gap {
+  gap: var(--element-gap);
+}
+
+.frame.padding {
+  padding: var(--frame-padding);
+}
+
+.padding {
+  padding: var(--element-padding);
+}
+
+.frame.radius {
+  border-radius: var(--frame-radius);
+}
+
+.radius {
+  border-radius: var(--element-radius);
+  overflow: hidden;
+}
+
+.round {
+  border-radius: 9999px;
+  overflow:hidden;
+}
+
+.stick {
+  position: sticky;
+  z-index: 1;
+}
+
+.fix {
+  position: fixed;
+  z-index: 1;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-size), var(--grid-max-size)));
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  position:relative;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+.around {
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+.between {
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.start {
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.center {
+  text-align: center;
+}
+
+.horizontal.center,
+.vertical.center {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  /* text-align: inherit; */
+}
+
+.top {
+  top:0;
+}
+
+.bottom {
+  bottom:0;
+}
+
+.left {
+  left:0;
+}
+
+.right {
+  right:0;
+}
+
+.baseline {
+  align-content: baseline;
+  justify-content: baseline;
+  align-items: baseline;
+}
+
+.end {
+  align-content: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.animation {
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight {
+  background: var(--transparent-color);
+  color: var(--highlight-surface-color);
+}
+
+.action {
+  background: var(--transparent-color);
+  color: var(--action-surface-color);
+}
+
+.accent {
+  background: var(--transparent-color);
+  color: var(--accent-surface-color);
+}
+
+.highlight h1, .highlight h2, .highlight h3, .highlight h4, .highlight h5, .highlight h6, h1.highlight, h2.highlight, h3.highlight, h4.highlight, h5.highlight, h6.highlight {
+  color: var(--highlight-heading-color);
+}
+
+.accent h1, .accent h2, .accent h3, .accent h4, .accent h5, .accent h6, h1.accent, h2.accent, h3.accent, h4.accent, h5.accent, h6.accent {
+  color: var(--accent-heading-color);
+}
+
+.action h1, .action h2, .action h3, .action h4, .action h5, .action h6, h1.action, h2.action, h3.action, h4.action, h5.action, h6.action {
+  color: var(--action-heading-color);
+}
+
+.border {
+  border-width: var(--border-width);
+  border-style: var(--border-style);
+  border-color: var(--base-border-color);
+}
+
+.highlight.border {
+  border-color: var(--highlight-border-color);
+  color: var(--base-text-color);
+}
+
+.action.border {
+  border-color: var(--action-border-color);
+  color: var(--base-text-color);
+}
+
+.accent.border {
+  border-color: var(--accent-border-color);
+  color: var(--base-text-color);
+}
+
+.background {
+  background: var(--base-surface-color);
+}
+
+.action.background {
+  background: var(--action-surface-color);
+  color: var(--action-text-color);
+}
+
+.highlight.background {
+  background: var(--highlight-surface-color);
+  color: var(--highlight-text-color);
+}
+
+.accent.background {
+  background: var(--accent-surface-color);
+  color: var(--accent-text-color);
+}
+
+.measure {
+  max-width: var(--measure);
+}
+
+input[type="submit"],
+a,
+button, 
+.button {
+  border: var(--transparent-color);
+  border-radius: var(--element-radius);
+  background: var(--transparent-color);
+  padding: var(--element-padding) calc(var(--element-padding) * 2);
+  color: var(--base-text-color);
+  text-decoration: none;
+}
+
+.highlight a,
+.highlight input[type="submit"],
+.highlight button {
+  color: var(--highlight-text-color);
+}
+
+.accent a,
+.accent input[type="submit"],
+.accent button {
+  color: var(--accent-text-color);
+}
+
+.action a,
+.action input[type="submit"],
+.action button {
+  color: var(--action-text-color);
+}
+
+
+a.primary, 
+a.secondary,
+a.primary:hover,
+a.secondary:hover {
+  padding: var(--element-padding) calc(var(--element-padding) * 2);
+  text-decoration: none;
+  border-radius: var(--element-radius);
+}
+
+input[type="submit"]:hover,
+a:hover,
+button:hover, 
+.button:hover {
+  background: var(--base-hover-color);
+  color: var(--action-surface-color);
+  cursor: pointer;
+}
+
+input[type="submit"].primary,
+a.primary, 
+.primary, button.primary {
+  transform: var(--action-base-position);
+  transition: var(--action-base-transition);
+  box-shadow: var(--action-base-shadow);
+  background: var(--action-surface-color);
+  color: var(--action-text-color);
+}
+
+input[type="submit"].primary:hover,
+a.primary:hover, 
+.primary:hover, button.primary:hover {
+  transform: var(--action-hover-position);
+  box-shadow: var(--action-hover-shadow);
+  background: var(--action-hover-color);
+  color: var(--action-text-color);
+  cursor: pointer;
+
+}
+
+input[type="submit"].secondary,
+a.secondary, 
+.secondary, button.secondary {
+  transform: var(--action-base-position);
+  transition: var(--action-base-transition);
+  box-shadow: var(--action-base-shadow);
+  border: var(--border-width) var(--border-style)  var(--action-surface-color);
+  background: var(--transparent-color);
+  color: var(--action-surface-color);
+}
+
+input[type="submit"].secondary:hover,
+a.secondary:hover, 
+.secondary:hover, button.secondary:hover {
+  transform: var(--action-hover-position);
+  box-shadow: var(--action-hover-shadow);
+  border: var(--border-width) var(--border-style)  var(--action-hover-color);
+  background: var(--transparent-color);
+  color: var(--action-hover-color);
+  cursor: pointer;
+}
+
+input[type="submit"].primary:active,
+a.primary:active,
+button.primary:active, 
+.primary:active,
+input[type="submit"].secondary:active,
+a.secondary:active,
+button.secondary:active, 
+.secondary:active,
+.primary:active {
+  transform: var(--action-active-position);
+  box-shadow: var(--action-active-shadow);
+}
+
+.w-xxs {
+  width: var(--w-xxs);
+  max-width: 100%;
+  overflow-x: hidden;  
+}
+
+.w-xs{
+  width: var(--w-xs);
+  max-width: 100%;
+  overflow-x: hidden;  
+}
+
+.w-sm {
+  width: var(--w-sm);
+ max-width: 100%;
+ overflow-x: hidden; 
+}
+
+.w-md {
+  width: var(--w-md);
+  max-width: 100%;
+  overflow-x: hidden;  
+}
+
+.w-lg{
+  width: var(--w-lg);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.w-xl {
+  width: var(--w-xl);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.w-xxl {
+  width: var(--w-xxl);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.w-xxxl {
+  width: var(--w-xxxl);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.w-full {
+  word-wrap: break-word;
+  width: var(--w-full);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.h-xxs {
+  height: var(--h-xxs);
+  min-height: 100%;
+  overflow-y: hidden;
+}
+
+.h-xs{
+  height: var(--h-xs);
+  overflow-y: hidden;
+}
+
+.h-sm {
+  height: var(--h-sm);
+  overflow-y: hidden;
+}
+
+.h-md {
+  height: var(--h-md);
+  overflow-y: hidden;
+}
+
+.h-lg{
+  height: var(--h-lg);
+  overflow-y: hidden;
+}
+
+.h-xl {
+  height: var(--h-xl);
+  overflow-y: hidden;
+}
+
+.h-xxl {
+  height: var(--h-xxl);
+  overflow-y: hidden;
+}
+
+.h-xxxl {
+  height: var(--h-xxxl);
+  overflow-y: hidden;
+}
+
+.h-full {
+  height: var(--h-full);
+  overflow-y: hidden;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.split > * {
+  flex:max(var(--grid-min-size), (100% - 20px)/3);
+  overflow: hidden;
+}
+
+.label {
+  border-radius: var(--element-radius);
+  background: var(--highlight-surface-color);
+  padding: var(--element-padding);
+}
+
+.cover {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.xxs {
+  width: auto;
+  font-size: var(--xxs);
+}
+
+.xs {
+  width: auto;
+  font-size: var(--xs);
+}
+
+.sm {
+  width: auto;
+  font-size: var(--sm);
+}
+
+.md {
+  width: auto;
+  font-size: var(--md);
+}
+
+.lg {
+  width: auto;
+  font-size: var(--lg);
+}
+
+.xl {
+  width: auto;
+  font-size: var(--xl);
+}
+
+.xxl {
+  width: auto;
+  font-size: var(--xxl);
+}
+
+.xxxl {
+  width: auto;
+  font-size: var(--xxxl);
+}
+
+.scroll {
+  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}

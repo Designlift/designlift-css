@@ -89,10 +89,12 @@ Set the theme of design using the following template and then import after `inde
 
   /* Typography */
   --base-font-family: 'Inter Variable', sans-serif;
-  --heading-font-family: 'Inter Variable', sans-serif;
-  --accent-font-family: 'Inter Variable', sans-serif;
   --base-font-style: italic;
-  --heading-font-style: bold italic;
+  --base-font-weight: 400;
+  --heading-font-family: 'Inter Variable', sans-serif;
+  --heading-font-style: italic;
+  --heading-font-weight: 700;
+  --accent-font-family: 'Inter Variable', sans-serif;
   --measure: 66ch;
   --line-height: var(--scale);
 
