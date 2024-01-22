@@ -1,7 +1,7 @@
 {
   "name": "designlift-css",
   "description": "Design for web with just a few classes.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "David Schofield <hello@d471d.com>",
   "repository": {
     "type": "git",
